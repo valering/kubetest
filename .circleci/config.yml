@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: /root
+    working_directory: /work
 
     docker:
       - image: ubuntu:16.04
