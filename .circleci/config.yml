@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - checkout
-      - run: export KUBECONFIG = ${CIRCLE_WORKING_DIRECTORY}${KUBEPATH}
+      - run: export KUBECONFIG=${CIRCLE_WORKING_DIRECTORY}${KUBEPATH}
 
       - run:
           name: test vars
