@@ -15,6 +15,9 @@ jobs:
       - run: chmod +x ./.scripts/k8s.sh
       - run: ./.scripts/k8s.sh
 
+      - run: pwd
+      - run: ls -l
+
       - run: chmod +x ./.scripts/helm.sh
       - run: ./.scripts/helm.sh
 
