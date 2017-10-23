@@ -1,15 +1,15 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/helmtest
+    working_directory: /root/helmtest
 
     docker:
       - image: ubuntu:16.04
 
     environment:
       PROJECT_NAME: "test-api"
-      WORKDIR: /root/helmtest
-
+      WORKDIR: $CIRCLE_WORKING_DIRECTORY
+      
     steps:
       - checkout
       

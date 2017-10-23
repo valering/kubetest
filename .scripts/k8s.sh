@@ -5,11 +5,7 @@ set -x
 apt-get update && apt-get -y install curl
 
 # create and set path for our bin dir
-#WORKDIR=/root/helmtest
-echo $WORKDIR
-mkdir $WORKDIR/bin
 PATH=$PATH:$(pwd)/bin
-echo $PATH
 
 # install kubectl
 curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.7.8/bin/linux/amd64/kubectl
