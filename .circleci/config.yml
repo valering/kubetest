@@ -8,6 +8,7 @@ jobs:
 
     environment:
       PROJECT_NAME: "test-api"
+      KUBECONFIG: /helmtest2/.kube/config
 
     steps:
       - checkout
