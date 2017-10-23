@@ -16,10 +16,12 @@ jobs:
       - run: ./.scripts/k8s.sh
 
       - run: pwd
-      - run: ls -l
+      - run: ls -la
+      - run: ls -la ~/.kube
+      - run: ls -la /work/.kube
 
       - run: chmod +x ./.scripts/helm.sh
-      - run: ./.scripts/helm.sh
+      #- run: ./.scripts/helm.sh
 
       - run:
           name: Output something
