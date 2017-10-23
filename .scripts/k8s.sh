@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 set -x
 
+mkdir $WORKDIR/bin
+
 # install curl
 apt-get update && apt-get -y install curl
 
 # create and set path for our bin dir
+mkdir $WORKDIR/bin
 PATH=$PATH:$(pwd)/bin
 
 # install kubectl

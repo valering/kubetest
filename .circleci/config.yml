@@ -8,8 +8,8 @@ jobs:
 
     environment:
       PROJECT_NAME: "test-api"
-      WORKDIR: $CIRCLE_WORKING_DIRECTORY
-      
+      WORKDIR: ${CIRCLE_WORKING_DIRECTORY}
+
     steps:
       - checkout
       
