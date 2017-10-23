@@ -7,11 +7,14 @@ jobs:
       - image: ubuntu:16.04
 
     environment:
+      BASH_ENV: ~/.bashrc
       PROJECT_NAME: "test-api"
-      PATH: /work:/work/bin:$PATH
+
 
     steps:
       - checkout
+
+      - run: echo 'export PATH=/work:/work/bin:$PATH' >> $BASH_ENV 
       
       - run: chmod +x ./.scripts/k8s.sh
       - run: ./.scripts/k8s.sh
