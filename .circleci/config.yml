@@ -11,6 +11,12 @@ jobs:
 
     steps:
       - checkout
+
+      - run:
+          name: Install helm
+          command: |
+            curl https://get.helm.sh | sh
+
       - run: helm list
 
       - run:
