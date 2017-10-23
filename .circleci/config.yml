@@ -12,17 +12,13 @@ jobs:
     steps:
       - checkout
       
-      - run: echo $KUBECONFIG
-
       - run: chmod +x ./.scripts/k8s.sh
       - run: ./.scripts/k8s.sh
 
-      - run: pwd
-      - run: ls -la
-      - run: ls -la .kube/
-
       - run: chmod +x ./.scripts/helm.sh
       - run: ./.scripts/helm.sh
+
+      - run: helm list
 
       - run:
           name: Output something
