@@ -12,10 +12,8 @@ jobs:
     steps:
       - checkout
 
-      - run:
-          name: Install helm
-          command: |
-            curl https://get.helm.sh | sh
+      - run: apt-get update && apt-get -y install curl
+      - run: curl https://get.helm.sh | sh
 
       - run: helm list
 
