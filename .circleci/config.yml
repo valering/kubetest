@@ -17,8 +17,7 @@ jobs:
 
       - run: pwd
       - run: ls -la
-      - run: ls -la ~/.kube
-      - run: ls -la /work/.kube
+      - run: ls -la /work/.kube/
 
       - run: chmod +x ./.scripts/helm.sh
       #- run: ./.scripts/helm.sh
