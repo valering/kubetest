@@ -3,6 +3,6 @@ set -x
 
 # create and set path for our bin dir
 PATH=$PATH:$(pwd)/bin
-export KUBECONFIG=$WORKDIR/.kube/config
+export KUBECONFIG=$KUBECONFIG
 
 helm list
