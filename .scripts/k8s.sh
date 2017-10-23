@@ -11,7 +11,7 @@ PATH=$PATH:$(pwd)/bin
 # install kubectl
 curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.7.8/bin/linux/amd64/kubectl
 chmod +x kubectl
-mv kubectl $CIRCLE_WORKING_DIRECTORY/bin
+mv kubectl $  /bin
 
 # install helm
 curl -LO https://storage.googleapis.com/kubernetes-helm/helm-v2.6.1-linux-amd64.tar.gz
