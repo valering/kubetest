@@ -11,15 +11,11 @@ jobs:
 
     steps:
       - checkout
+      
+      - run: chmod +x ./.scripts/k8s.sh
+      - run: ./.scripts/k8s.sh
 
-      - run: apt-get update && apt-get -y install curl
-      - run: curl https://storage.googleapis.com/kubernetes-helm/helm-v2.6.1-linux-amd64.tar.gz | tar xzf -
-      - run: mkdir -p /usr/local/bin
-      - run: mv ./linux-amd64/helm /usr/local/bin/
-      - run: pwd
-      - run: ls /usr/local/bin
-
-      - run: /usr/local/bin/helm list
+      - run: helm list
 
       - run:
           name: Output something
