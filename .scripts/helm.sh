@@ -2,7 +2,8 @@
 set -x
 
 # create and set path for our bin dir
-WORKDIR=/root
+pwd
+WORKDIR=/root/helmtest
 mkdir $WORKDIR/bin
 PATH=$PATH:$(pwd)/bin
 echo $PATH
