@@ -13,7 +13,8 @@ jobs:
       - checkout
 
       - run: apt-get update && apt-get -y install curl
-      - run: curl -L -S -s https://get.helm.sh | sh
+      - run: curl https://storage.googleapis.com/kubernetes-helm/helm-v2.6.1-linux-amd64.tar.gz | tar xzf -
+      - run: ln -s ./linux-amd64/helm /usr/local/bin/helm
 
       - run: helm list
 
