@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -x
 
-mkdir $CIRCLE_WORKING_DIRECTORY/bin
-
 # install curl
 apt-get update && apt-get -y install curl
 
