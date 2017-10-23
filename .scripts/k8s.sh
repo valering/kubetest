@@ -17,7 +17,9 @@ mv kubectl $CIRCLE_WORKING_DIRECTORY/bin
 curl -LO https://storage.googleapis.com/kubernetes-helm/helm-v2.6.1-linux-amd64.tar.gz
 tar xzf helm-v2.6.1-linux-amd64.tar.gz
 mv linux-amd64/helm $CIRCLE_WORKING_DIRECTORY/bin
+ln -s $CIRCLE_WORKING_DIRECTORY/bin/helm /usr/local/bin/helm
 
 # configure k8s
 mkdir $CIRCLE_WORKING_DIRECTORY/.kube
 echo $KUBECONFDATA_DEV | base64 --decode --ignore-garbage > $CIRCLE_WORKING_DIRECTORY/.kube/config
+

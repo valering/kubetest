@@ -13,10 +13,6 @@ jobs:
     steps:
       - checkout
       
-      - run: echo 'export PATH=$CIRCLE_WORKING_DIRECTORY:$PATH' >> $BASH_ENV
-
-      - run: echo $BASH_ENV
-
       - run: chmod +x ./.scripts/k8s.sh
       - run: ./.scripts/k8s.sh
 
