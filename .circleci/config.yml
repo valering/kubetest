@@ -1,27 +1,23 @@
 version: 2
 jobs:
   build:
-    working_directory: /work
+    working_directory: ~/helmtest
 
     docker:
       - image: ubuntu:16.04
 
     environment:
-      BASH_ENV: ~/.bashrc
       PROJECT_NAME: "test-api"
-
 
     steps:
       - checkout
-
-      - run: echo 'export PATH=/work:/work/bin:$PATH' >> $BASH_ENV 
       
       - run: chmod +x ./.scripts/k8s.sh
       - run: ./.scripts/k8s.sh
 
       - run: pwd
       - run: ls -la
-      - run: ls -la /work/.kube/
+      - run: ls -la ~/.kube/
 
       - run: chmod +x ./.scripts/helm.sh
       - run: ./.scripts/helm.sh
@@ -32,5 +28,5 @@ jobs:
             echo "Build was done"
 
       - store_artifacts:
-          path: /helmdir/data/tests
+          path: ~/helmtest
           destination: data-tests

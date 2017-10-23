@@ -5,7 +5,7 @@ set -x
 apt-get update && apt-get -y install curl
 
 # create and set path for our bin dir
-WORKDIR=/work
+WORKDIR=/root
 mkdir $WORKDIR/bin
 PATH=$PATH:$(pwd)/bin
 echo $PATH
