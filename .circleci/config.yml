@@ -20,6 +20,7 @@ jobs:
       - run: ./.scripts/helm.sh
 
       - run: helm list
+      - run: kubectl get pod --all-namespaces
 
       - run:
           name: Output something
