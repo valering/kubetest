@@ -13,7 +13,7 @@ jobs:
       - checkout
 
       - run: apt-get update && apt-get -y install curl
-      - run: curl https://get.helm.sh | sh
+      - run: curl -L -S -s https://get.helm.sh | sh
 
       - run: helm list
 
