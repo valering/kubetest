@@ -12,14 +12,17 @@ jobs:
 
     steps:
       - checkout
+      - run: echo ${KUBECONFIG}
+      - run: echo ${CIRCLE_WORKING_DIRECTORY}/.kube/config
+      - run: echo ${PATH}
       
-      - run: chmod +x ./.scripts/k8s.sh
-      - run: ./.scripts/k8s.sh
+#      - run: chmod +x ./.scripts/k8s.sh
+#      - run: ./.scripts/k8s.sh
 
-      - run: chmod +x ./.scripts/helm.sh
-      - run: ./.scripts/helm.sh
+#      - run: chmod +x ./.scripts/helm.sh
+#      - run: ./.scripts/helm.sh
 
-      - run: helm list
+#      - run: helm list
 
       - run:
           name: Output something
