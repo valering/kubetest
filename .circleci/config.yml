@@ -8,7 +8,7 @@ jobs:
 
     environment:
       PROJECT_NAME: "test-api"
-      KUBECONFIG: /helmtest2/.kube/config
+      KUBECONFIG: ${CIRCLE_WORKING_DIRECTORY}/.kube/config
 
     steps:
       - checkout
