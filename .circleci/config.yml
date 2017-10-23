@@ -1,31 +1,25 @@
 version: 2
 jobs:
   build:
-    working_directory: /helmtest2
+    working_directory: /workdir
 
     docker:
       - image: ubuntu:16.04
 
     environment:
       PROJECT_NAME: "test-api"
-      KUBEPATH: /.kube/config
+      KUBECONFIG: /workdir/.kube/config
 
     steps:
       - checkout
-      - run: export KUBECONFIG=${CIRCLE_WORKING_DIRECTORY}${KUBEPATH}
-
-      - run:
-          name: test vars
-          command: |
-            echo ${KUBECONFIG}
       
-#      - run: chmod +x ./.scripts/k8s.sh
-#      - run: ./.scripts/k8s.sh
+      - run: chmod +x ./.scripts/k8s.sh
+      - run: ./.scripts/k8s.sh
 
-#      - run: chmod +x ./.scripts/helm.sh
-#      - run: ./.scripts/helm.sh
+      - run: chmod +x ./.scripts/helm.sh
+      - run: ./.scripts/helm.sh
 
-#      - run: helm list
+      - run: helm list
 
       - run:
           name: Output something
