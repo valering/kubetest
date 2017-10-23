@@ -8,13 +8,16 @@ jobs:
 
     environment:
       PROJECT_NAME: "test-api"
-      KUBECONFIG: ${CIRCLE_WORKING_DIRECTORY}/.kube/config
+      KUBEPATH: /.kube/config
 
     steps:
       - checkout
-      - run: echo ${KUBECONFIG}
-      - run: echo ${CIRCLE_WORKING_DIRECTORY}/.kube/config
-      - run: echo ${PATH}
+      - run: export KUBECONFIG = ${CIRCLE_WORKING_DIRECTORY}${KUBEPATH}
+
+      - run:
+          name: test vars
+          command: |
+            echo ${KUBECONFIG}
       
 #      - run: chmod +x ./.scripts/k8s.sh
 #      - run: ./.scripts/k8s.sh
