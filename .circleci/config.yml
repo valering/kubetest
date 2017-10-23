@@ -16,7 +16,7 @@ jobs:
       - run: curl https://storage.googleapis.com/kubernetes-helm/helm-v2.6.1-linux-amd64.tar.gz | tar xzf -
       - run: ln -s ./linux-amd64/helm /usr/local/bin/helm
 
-      - run: helm list
+      - run: /usr/local/bin/helm list
 
       - run:
           name: Output something
