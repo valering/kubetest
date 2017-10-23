@@ -12,6 +12,8 @@ jobs:
     steps:
       - checkout
       
+      - run: echo $KUBECONFIG
+
       - run: chmod +x ./.scripts/k8s.sh
       - run: ./.scripts/k8s.sh
 
